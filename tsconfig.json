@@ -8,14 +8,14 @@
     "types": [
       "jest",
       "node"
-    ],  
+    ],
     "sourceMap": true,
     "target": "es6",
     "baseUrl": "./",
     "rootDir": "src",
     "outDir": "lib",
     "declaration": true
-  },  
+  },
   "exclude": [
     "node_modules",
     "lib"
