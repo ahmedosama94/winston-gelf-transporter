@@ -1,5 +1,7 @@
 winston-gelf-transporter
 ========================
+This package is a maintained fork of [winston-gelf-transporter](https://www.npmjs.com/package/winston-gelf-transporter)
+
 A Winston transporter for sending GELF messages to your Graylog server.
 
 ## Setup
