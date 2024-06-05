@@ -1,6 +1,6 @@
 winston-gelf-transporter
 ========================
-This fork of [winston-gelf-transporter](https://www.npmjs.com/package/winston-gelf-transporter) (original package no longer maintained)
+This is fork of [winston-gelf-transporter](https://www.npmjs.com/package/winston-gelf-transporter) (original package no longer maintained)
 
 A Winston transporter for sending GELF messages to your Graylog server.
 
@@ -35,17 +35,17 @@ const transporter = new WinstonGelfTransporter();
 You can also pass a `TransporterOptions` object to the constructor
 ```js
 const transporter = new WinstonGelfTransporter({
-  level: string,              // optional - logging level for the transporter
-  silent: boolean,            // optional - true to turn off output
-  handleExceptions: boolean, 
-  version: string,            // Graylog communication version, default 1.1
-  host: string,               // Host for your graylog server, default 127.0.0.1
-  port: number,               // Port for your graylog server, default 12201
-  protocol: string,           // The input protocol for your GELF input, default 'udp'
-  hostName: string,           // The name of the host for your Node.js app
-  additional: Object          // Additional defaults to add to your messages
-})
+  version?: string,
+  host?: string,
+  port?: number,
+  protocol?: string,
+  hostName?: string,
+  additional?: Object,
+  // + winston's default `TransportStreamOptions`
+});
 ```
+[TransportStreamOptions](https://github.com/winstonjs/winston-transport/blob/master/index.d.ts#L26)
+> ⚠ **coloring or styling formatters will not work**: Formatters should only be used for text transformations!
 
 ## Usage
 
