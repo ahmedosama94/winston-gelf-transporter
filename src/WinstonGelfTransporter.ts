@@ -1,12 +1,10 @@
-import TransportStream from 'winston-transport';
+import TransportStream, {
+  TransportStreamOptions
+} from 'winston-transport';
 import log from 'gelf-pro';
 import os from 'os';
 
 type TransporterOptions = {
-  // Winston transporter options
-  level?: string;
-  silent?: boolean;
-  handleExceptions?: boolean;
   // Graylog communication options
   version?: string;
   host?: string;
@@ -14,7 +12,7 @@ type TransporterOptions = {
   protocol?: string;
   hostName?: string;
   additional?: Object;
-};
+} & TransportStreamOptions;
 
 const MIN_PORT: number = 0;
 const MAX_PORT: number = 65535;

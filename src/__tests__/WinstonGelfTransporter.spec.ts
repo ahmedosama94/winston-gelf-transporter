@@ -1,4 +1,5 @@
 import log from 'gelf-pro';
+import { Logger, createLogger, format } from 'winston';
 import WinstonGelfTransporter from '../WinstonGelfTransporter';
 
 describe('WinstonGelfTransporter', () => {
@@ -64,6 +65,35 @@ describe('WinstonGelfTransporter', () => {
     });
     afterEach(() => {
       jest.resetAllMocks();
+    });
+  });
+
+  describe('format', () => {
+    let transporter: WinstonGelfTransporter;
+    let logger: Logger;
+    const testResult: any = { test: 'true' };
+
+    beforeAll(() => {
+      const testFormatter = format(() => testResult);
+      transporter = new WinstonGelfTransporter({
+        format: testFormatter()
+      });
+
+      logger = createLogger({
+        transports: [transporter],
+        levels: { debug: 0 },
+        level: 'debug'
+      });
+    });
+
+    it('passes the messages to the formatter', () => {
+      logger.log('debug', { anything: 'else' });
+
+      expect(log.message).toHaveBeenCalledWith(
+        transporter.getLogMessage(testResult),
+        undefined,
+        expect.anything()
+      );
     });
   });
 });

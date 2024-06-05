@@ -1,6 +1,6 @@
 {
   "name": "@ahmedosama94/winston-gelf-transporter",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A Winston transporter for sending GELF messages",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bytetechnology/winston-gelf-transporter.git"
+    "url": "git+https://github.com/ahmedosama94/winston-gelf-transporter.git"
   },
   "keywords": [
     "gelf",
@@ -35,11 +35,14 @@
     "tcp"
   ],
   "author": "David Sornberger <davids@bytetechnology.co>",
+  "contributors": [
+    {"name": "Ahmed Osama Ibrahim", "email": "ahmed.osama94@gmail.com", "url": "https://github.com/ahmedosama94"}
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bytetechnology/winston-gelf-transporter/issues"
+    "url": "https://github.com/ahmedosama94/winston-gelf-transporter/issues"
   },
-  "homepage": "https://github.com/bytetechnology/winston-gelf-transporter#readme",
+  "homepage": "https://github.com/ahmedosama94/winston-gelf-transporter#readme",
   "dependencies": {
     "gelf-pro": "^1.3.11",
     "logform": "^2.6.0",
